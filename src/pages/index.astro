@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Bem-vindo!">
   <main>
-    <div class="redirect-body">
+    <div class="l-redirect-body">
       <header>
         <div>
           <img
@@ -15,38 +15,40 @@ import Layout from "../layouts/Layout.astro";
           />
         </div>
       </header>
-      <div class="wrapper">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
+      <div class="l-wrapper">
+        <div class="l-circle"></div>
+        <div class="l-circle"></div>
+        <div class="l-circle"></div>
+        <div class="l-shadow"></div>
+        <div class="l-shadow"></div>
+        <div class="l-shadow"></div>
       </div>
     </div>
   </main>
 </Layout>
 
 <script>
-  function callNext(link) {
-    setTimeout(() => {
-      link && window.location.replace(link);
-    }, 3000);
+  window.onload = () => {
+    function callNext(link: string) {
+      setTimeout(() => {
+        link && window.location.replace(link);
+      }, 3000);
+    }
+
+    callNext('/main');
+
+    // loading animation created by Ahmad Emran - https://codepen.io/ahmadbassamemran/
   }
-
-  // callNext('https://www.google.com.br');
-
-  // loading animation created by Ahmad Emran - https://codepen.io/ahmadbassamemran/
 </script>
 
 <style>
-  body {
+  main {
     margin: 0;
     width: 100%;
     height: 100vh;
     background: radial-gradient(#fff800, #ff8000);
   }
-  .wrapper {
+  .l-wrapper {
     width: 200px;
     height: 60px;
     position: absolute;
@@ -54,7 +56,7 @@ import Layout from "../layouts/Layout.astro";
     top: 50%;
     transform: translate(-50%, -50%);
   }
-  .circle {
+  .l-circle {
     width: 20px;
     height: 20px;
     position: absolute;
@@ -62,10 +64,10 @@ import Layout from "../layouts/Layout.astro";
     background-color: #fff;
     left: 15%;
     transform-origin: 50%;
-    animation: circle 0.5s alternate infinite ease;
+    animation: l-circle 0.5s alternate infinite ease;
   }
 
-  @keyframes circle {
+  @keyframes l-circle {
     0% {
       top: 60px;
       height: 5px;
@@ -81,16 +83,16 @@ import Layout from "../layouts/Layout.astro";
       top: 0%;
     }
   }
-  .circle:nth-child(2) {
+  .l-circle:nth-child(2) {
     left: 45%;
     animation-delay: 0.2s;
   }
-  .circle:nth-child(3) {
+  .l-circle:nth-child(3) {
     left: auto;
     right: 15%;
     animation-delay: 0.3s;
   }
-  .shadow {
+  .l-shadow {
     width: 20px;
     height: 4px;
     border-radius: 50%;
@@ -101,10 +103,10 @@ import Layout from "../layouts/Layout.astro";
     z-index: -1;
     left: 15%;
     filter: blur(1px);
-    animation: shadow 0.5s alternate infinite ease;
+    animation: l-shadow 0.5s alternate infinite ease;
   }
 
-  @keyframes shadow {
+  @keyframes l-shadow {
     0% {
       transform: scaleX(1.5);
     }
@@ -117,11 +119,11 @@ import Layout from "../layouts/Layout.astro";
       opacity: 0.4;
     }
   }
-  .shadow:nth-child(4) {
+  .l-shadow:nth-child(4) {
     left: 45%;
     animation-delay: 0.2s;
   }
-  .shadow:nth-child(5) {
+  .l-shadow:nth-child(5) {
     left: auto;
     right: 15%;
     animation-delay: 0.3s;
@@ -136,7 +138,7 @@ import Layout from "../layouts/Layout.astro";
     margin: 0 auto;
   }
 
-  .redirect-body {
+  .l-redirect-body {
     width: 100%;
     height: 100vh;
   }
