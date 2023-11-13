@@ -4,10 +4,10 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: black,
-				secondary: black,
-				dark: black,
-				light: black
+				primary: '#000',
+				secondary: '#000',
+				dark: '#000',
+				light: '#000'
 			}
 		},
 		fontFamily: {
