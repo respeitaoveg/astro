@@ -47,19 +47,21 @@
 
     createContact.listIds = [2];
 
-    alert('enviar')
+    apiInstance.createContact(createContact).then(
+      function (data) {
+        console.log(
+          "API called successfully. Returned data: " + JSON.stringify(data)
+        );
+      },
+      function (error) {
+        const er = JSON.parse(error.response.text)
 
-    // apiInstance.createContact(createContact).then(
-    //   function (data) {
-    //     console.log(
-    //       "API called successfully. Returned data: " + JSON.stringify(data)
-    //     );
-    //   },
-    //   function (error) {
-    //     console.error(error);
-    //   }
-    // );
-  });
+        alert(er.message)
+        // alert('Verifique o email e tente novamente')
+      }
+    )
+
+  })
 </script>
 
 <style>
