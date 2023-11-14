@@ -3,27 +3,28 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Registro kd-pet">
-  <main class="flex flex-col gap-20 p-4 md:p-20 md:pl-[200px] items-center md:items-start">
+  <main class="flex flex-col gap-10 md:gap-20 p-4 md:p-20 md:pl-[200px] items-center md:items-start">
     <div class="mt-5 max-w-[200px]">
       <img src="/kdpet-logo.png" alt="" srcset="" width="100%" />
     </div>
-    <h1 class="text-4xl md:hidden text-center">ESTAMOS CHEGANDO!</h1>
-    <div class="hidden md:block">
-      <p class="text-7xl text-start">ESTAMOS</p>
-      <p class="text-7xl text-start">CHEGANDO!</p>
+    <div>
+      <p class="text-4xl md:text-7xl text-center md:text-start">ESTAMOS</p>
+      <p class="text-4xl md:text-7xl text-center md:text-start">CHEGANDO!</p>
     </div>
-    <h4 class="text-xl text-center">Entre em nossa lista de espera.</h4>
-    <form
-      id="submit-l"
-      action="submit"
-      class="w-[300px] md:w-full md:max-w-[720px] flex flex-col md:flex-row gap-5 items-center"
-    >
-      <input type="text" placeholder="Nome" />
-      <input type="text" placeholder="E-mail" />
-      <button type="submit" class="kdpet-button mt-10" role="button">
-        Enviar
-      </button>
-    </form>
+    <div class="flex flex-col gap-5 items-center md:items-start">
+      <h4 class="text-xl text-center">Entre em nossa lista de espera.</h4>
+      <form
+        id="submit-l"
+        action="submit"
+        class="w-[300px] md:w-full md:max-w-[720px] flex flex-col md:flex-row gap-5 items-center"
+      >
+        <input type="text" placeholder="Nome" />
+        <input type="text" placeholder="E-mail" />
+        <button type="submit" class="kdpet-button mt-10" role="button">
+          Enviar
+        </button>
+      </form>
+    </div>
   </main>
 </Layout>
 
