@@ -1,21 +1,28 @@
-<form
-  id="submit-l"
-  action="submit"
-  class="flex flex-col gap-5 mt-10 items-center"
->
-  <label for="name" class="inp">
-    <input type="text" id="name" placeholder="" autocomplete="off" />
-    <span class="label">Nome</span>
-    <span class="focus-bg"></span>
-  </label>
-  <label for="email" class="inp">
-    <input type="email" id="email" placeholder="" />
-    <span class="label">Email</span>
-    <span class="focus-bg"></span>
-  </label>
+---
+import Layout from "../layouts/Layout.astro";
+---
 
-  <button type="submit" class="button-cartoon" role="button">Cadastrar</button>
-</form>
+<Layout title="Registro kd-pet">
+  <main class="flex flex-col gap-10 p-4 items-center">
+    <div class="mt-5 max-w-[200px]">
+      <img src="/kdpet-logo.png" alt="" srcset="" width="100%" />
+    </div>
+    <h1 class="text-4xl text-center">ESTAMOS CHEGANDO!</h1>
+    <h4 class="text-xl text-center">Entre em nossa lista de espera.</h4>
+    <form
+      id="submit-l"
+      action="submit"
+      class="flex flex-col gap-5 items-center"
+    >
+      <input type="text" placeholder="Nome" />
+      <input type="text" placeholder="E-mail" />
+
+      <button type="submit" class="button-cartoon" role="button">
+        Cadastrar
+      </button>
+    </form>
+  </main>
+</Layout>
 
 <script>
   // @ts-ignore
@@ -35,7 +42,8 @@
     let defaultClient = SibApiV3Sdk.ApiClient.instance;
 
     let apiKey = defaultClient.authentications["api-key"];
-    apiKey.apiKey = "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";
+    apiKey.apiKey =
+      "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";
 
     let apiInstance = new SibApiV3Sdk.ContactsApi();
     let createContact = new SibApiV3Sdk.CreateContact();
@@ -52,149 +60,34 @@
         console.log(
           "API called successfully. Returned data: " + JSON.stringify(data)
         );
+        alert("Cadastrado com sucesso!");
       },
       function (error) {
-        const er = JSON.parse(error.response.text)
+        const er = JSON.parse(error.response.text);
 
-        alert(er.message)
+        alert(er.message);
       }
-    )
-
-  })
+    );
+  });
 </script>
 
 <style>
-  .inp {
-    position: relative;
-    margin: auto;
-    width: 100%;
-    max-width: 280px;
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  .inp .label {
-    position: absolute;
-    top: 20px;
-    left: 12px;
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.5);
-    font-weight: 500;
-    transform-origin: 0 0;
-    transform: translate3d(0, 0, 0);
-    transition: all 0.2s ease;
-    pointer-events: none;
-  }
-  .inp .focus-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.05);
-    z-index: -1;
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-  .inp input {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    border: 0;
-    font-family: inherit;
-    padding: 16px 12px 0 12px;
-    height: 56px;
-    font-size: 16px;
-    font-weight: 400;
-    background: rgba(0, 0, 0, 0.02);
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
-    color: #000;
-    transition: all 0.15s ease;
-  }
-  .inp input:hover {
-    background: rgba(0, 0, 0, 0.04);
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
-  }
-  .inp input:not(:placeholder-shown) + .label {
-    color: rgba(0, 0, 0, 0.5);
-    transform: translate3d(0, -12px, 0) scale(0.75);
-  }
-  .inp input:focus {
-    background: rgba(0, 0, 0, 0.05);
+  :focus {
     outline: none;
-    box-shadow: inset 0 -2px 0 #0077ff;
   }
-  .inp input:focus + .label {
-    color: #0077ff;
-    transform: translate3d(0, -12px, 0) scale(0.75);
-  }
-  .inp input:focus + .label + .focus-bg {
-    transform: scaleX(1);
-    transition: all 0.1s ease;
-  }
-
-  .button-cartoon {
-    appearance: button;
-    background-color: #1899d6;
-    border: solid transparent;
-    border-radius: 16px;
-    border-width: 0 0 4px;
+  input[type="text"] {
+    color: #fff;
+    width: 100%;
     box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: din-round, sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    line-height: 20px;
-    margin: 0;
-    outline: none;
-    overflow: visible;
-    padding: 13px 16px;
-    text-align: center;
-    text-transform: uppercase;
-    touch-action: manipulation;
-    transform: translateZ(0);
-    transition: filter 0.2s;
-    user-select: none;
-    -webkit-user-select: none;
-    vertical-align: middle;
-    white-space: nowrap;
-    width: 100%;
-    max-width: 280px;
+    letter-spacing: 1px;
+    padding: 15px;
+    padding-left: 25px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 50px;
   }
 
-  .button-cartoon:after {
-    background-clip: padding-box;
-    background-color: #1cb0f6;
-    border: solid transparent;
-    border-radius: 16px;
-    border-width: 0 0 4px;
-    bottom: -4px;
-    content: "";
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: -1;
-  }
-
-  .button-cartoon:main,
-  .button-cartoon:focus {
-    user-select: auto;
-  }
-
-  .button-cartoon:hover:not(:disabled) {
-    filter: brightness(1.1);
-    -webkit-filter: brightness(1.1);
-  }
-
-  .button-cartoon:disabled {
-    cursor: auto;
-  }
-
-  .button-cartoon:active {
-    border-width: 4px 0 0;
-    background: none;
+  input[type="text"]::placeholder {
+    color: #BABABA
   }
 </style>

@@ -8,7 +8,10 @@ export default {
 				secondary: '#000',
 				dark: '#000',
 				light: '#000'
-			}
+			},
+      backgroundColor: {
+        primary: '#0F45FB'
+      }
 		},
 		fontFamily: {
 			'sans': 'system-ui'
