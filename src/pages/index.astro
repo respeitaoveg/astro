@@ -3,22 +3,25 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Registro kd-pet">
-  <main class="flex flex-col gap-10 p-4 items-center">
+  <main class="flex flex-col gap-20 p-4 md:p-20 md:pl-[200px] items-center md:items-start">
     <div class="mt-5 max-w-[200px]">
       <img src="/kdpet-logo.png" alt="" srcset="" width="100%" />
     </div>
-    <h1 class="text-4xl text-center">ESTAMOS CHEGANDO!</h1>
+    <h1 class="text-4xl md:hidden text-center">ESTAMOS CHEGANDO!</h1>
+    <div class="hidden md:block">
+      <p class="text-7xl text-start">ESTAMOS</p>
+      <p class="text-7xl text-start">CHEGANDO!</p>
+    </div>
     <h4 class="text-xl text-center">Entre em nossa lista de espera.</h4>
     <form
       id="submit-l"
       action="submit"
-      class="flex flex-col gap-5 items-center"
+      class="w-[300px] md:w-full md:max-w-[720px] flex flex-col md:flex-row gap-5 items-center"
     >
       <input type="text" placeholder="Nome" />
       <input type="text" placeholder="E-mail" />
-
-      <button type="submit" class="button-cartoon" role="button">
-        Cadastrar
+      <button type="submit" class="kdpet-button mt-10" role="button">
+        Enviar
       </button>
     </form>
   </main>
@@ -72,10 +75,8 @@ import Layout from "../layouts/Layout.astro";
 </script>
 
 <style>
-  :focus {
-    outline: none;
-  }
-  input[type="text"] {
+
+  input {
     color: #fff;
     width: 100%;
     box-sizing: border-box;
@@ -83,11 +84,75 @@ import Layout from "../layouts/Layout.astro";
     padding: 15px;
     padding-left: 25px;
     background-color: transparent;
-    border: 1px solid #fff;
+    outline: 2px solid #fff;
     border-radius: 50px;
   }
 
-  input[type="text"]::placeholder {
-    color: #BABABA
+  input::placeholder {
+    color: #bababa;
+  }
+
+  .kdpet-button {
+    appearance: button;
+    background-color: #EDEDED;
+    border: solid transparent;
+    border-radius: 50px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 18px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter 0.2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .kdpet-button:after {
+    background-clip: padding-box;
+    background-color: black;
+    border: solid transparent;
+    border-radius: 50px;
+    border-width: 0 0 2px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  .kdpet-button:main,
+  .kdpet-button:focus {
+    user-select: auto;
+  }
+
+  .kdpet-button:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+  }
+
+  .kdpet-button:disabled {
+    cursor: auto;
+  }
+
+  .kdpet-button:active {
+    border-width: 4px 0 0;
+    background: none;
   }
 </style>
