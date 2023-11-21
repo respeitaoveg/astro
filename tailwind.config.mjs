@@ -4,11 +4,15 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: '#000',
+				primary: '#ccff33',
 				secondary: '#000',
 				dark: '#000',
 				light: '#000'
-			}
+			},
+      backgroundColor: {
+        primary: '#ccff33',
+        dark: '#1b1b1b'
+      }
 		},
 		fontFamily: {
 			'sans': 'system-ui'
