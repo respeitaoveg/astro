@@ -7,7 +7,9 @@ export default {
 				primary: '#ccff33',
 				secondary: '#000',
 				dark: '#303030',
-				light: '#000'
+				light: '#000',
+        facebook: '#0866ff',
+        instagram: '#f55f41'
 			}
 		},
 		fontFamily: {

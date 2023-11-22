@@ -5,8 +5,8 @@ import { Image } from 'astro:assets';
 import fortuneTigerImage from '../assets/images/fortune-tiger.png'
 import '../assets/css/default.css'
 import Button from '../components/Button.astro';
-import doubleArrowIcon from '../assets/images/double-arrow.svg'
 import Icon from '../components/Icon.astro';
+import Footer from '../components/Footer.astro'
 ---
 
 <Layout title="Bem-vindo ao Melhor Jogada." description='Aqui é pura diversão!'>
@@ -64,24 +64,7 @@ import Icon from '../components/Icon.astro';
       </section>
     </div>
   </main>
-  <footer class="w-full">
-    <div class="w-full flex justify-center py-10 bg-gradient-to-r from-[#001e5a50]">
-      <section class="container w-full flex flex-col md:flex-row items-center gap-10">
-        <div class="flex-1">
-          <img src="/logo.png" width="150px">
-        </div>
-        <div class="flex-1 flex flex-col gap-2">
-          <a href="https://melhorjogada.com/pages/terms-and-conditions">Termos & condições</a>
-          <a href="https://melhorjogada.com/pages/privacy-policy">Política de privacidade</a>
-        </div>
-        <div class="flex-1 flex flex-row justify-end gap-4">
-          <a href="#">a</a>
-          <a href="#">a</a>
-          <a href="#">a</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <Footer />
 </Layout>
 
 <style>
