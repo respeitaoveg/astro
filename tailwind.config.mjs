@@ -4,15 +4,48 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: '#000',
-				secondary: '#000',
-				dark: '#000',
-				light: '#000'
+				primary: '#ccff33',
+				secondary: '#001e5a',
+				dark: '#303030',
+				light: '#000',
+        facebook: '#0866ff',
+        instagram: '#f55f41'
 			}
 		},
 		fontFamily: {
 			'sans': 'system-ui'
-		}
+		},
+    animation: {
+      'bounce-hero': 'hero 3s ease-in-out infinite',
+      'bounce-arrow-right': 'arrow-right 1s ease-in-out infinite',
+      'bounce-arrow-bottom': 'arrow-bottom 1s ease-in-out infinite',
+    },
+    keyframes: {
+      'hero': {
+        '0%, 100%': {
+          transform: 'translateY(-10px)',
+        },
+        '50%': {
+          transform: 'translateY(0)',
+        }
+      },
+      'arrow-right': {
+        '0%, 100%': {
+          transform: 'translateX(0)',
+        },
+        '50%': {
+          transform: 'translateX(5px)',
+        }
+      },
+      'arrow-bottom': {
+        '0%, 100%': {
+          transform: 'translateY(0) rotate(90deg)',
+        },
+        '50%': {
+          transform: 'translateY(5px) rotate(90deg)',
+        }
+      },
+    }
 	},
 	plugins: [],
 }
