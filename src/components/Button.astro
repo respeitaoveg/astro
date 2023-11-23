@@ -1,12 +1,13 @@
 ---
 interface Props {
 	msg: string
+  url: any
 }
 
-const { msg } = Astro.props;
+const { msg, url } = Astro.props;
 ---
 
-<button class="my-button">{ msg }</button>
+<button class="my-button" onclick={url}>{ msg }</button>
 
 <style scoped>
   .my-button {

@@ -21,11 +21,11 @@ import Footer from '../components/Footer.astro'
             </div>
           </div>
           <div class="flex flex-col items-center md:items-start flex-1 text-center md:text-start gap-5">
-            <h1 class="text-4xl md:text-5xl m-0 bg-primary text-black p-3 rounded font-bold">
+            <h1 class="text-4xl md:text-5xl m-0 bg-primary text-black p-3 rounded font-bold tracking-normal">
               INDIQUE E GANHE!
             </h1>
             <h2>Indique um amigo pra jogar e garanta <span class="text-primary text-xl"><br>10% de bônus* </span></h2>
-            <Button msg='Entre agora!' />
+            <Button msg='Entre agora!' url='window.location = "https://www.melhorjogada.com"' />
           </div>
         </div>
       </section>
@@ -38,7 +38,7 @@ import Footer from '../components/Footer.astro'
             <div class="counter">1</div>
             <div>
               <p class="title">Cadastre-se</p>
-              <p class="subtitle">Faça seu cadastro no portal clicando <span class="text-primary">aqui</span></p>
+              <p class="subtitle">Faça seu cadastro no portal clicando <span class="text-primary cursor-pointer" onclick="window.location = 'https://www.melhorjogada.com'">aqui</span></p>
             </div>
           </div>
           <div class="next-step text-primary">
@@ -66,8 +66,8 @@ import Footer from '../components/Footer.astro'
     </div>
     <div class="w-full flex justify-center">
       <section class="container">
-        <div class="flex flex-col md:flex-row items-center mt-10 border-2 border-secondary rounded-lg p-4 text-gray-500">
-          <p class="text-sm">O Melhor Jogada é um site de apostas, desenvolvido em plataforma com total confiabilidade de dados, oferecendo suporte aos usuários 24h por dia. Prezamos pela melhor experiência do usuário em todas as transações feitas dentro do portal, oferecendo jogos de apostas esportivas de diversas modalidades (pré-jogo em tempo real) e jogos diversos de cassino online. Apoiamos o jogo consciente, positivo e responsável, oferecendo uma experiência segura em apostas de entretenimento e lazer. Não nos responsabilizamos por má-fé utilizando os serviços disponíveis neste portal, estando o usuário ciente das diretrizes e normas de utilização do site (regras disponíveis no primeiro acesso e nos termos de aceite da conta do usuário)</p>
+        <div class="flex flex-col md:flex-row items-center mt-10 border-2 border-gray-500 rounded-lg p-4 text-gray-500">
+          <p class="text-xs">O Melhor Jogada é um site de apostas, desenvolvido em plataforma com total confiabilidade de dados, oferecendo suporte aos usuários 24h por dia. Prezamos pela melhor experiência do usuário em todas as transações feitas dentro do portal, oferecendo jogos de apostas esportivas de diversas modalidades (pré-jogo em tempo real) e jogos diversos de cassino online. Apoiamos o jogo consciente, positivo e responsável, oferecendo uma experiência segura em apostas de entretenimento e lazer. Não nos responsabilizamos por má-fé utilizando os serviços disponíveis neste portal, estando o usuário ciente das diretrizes e normas de utilização do site (regras disponíveis no primeiro acesso e nos termos de aceite da conta do usuário)</p>
         </div>
       </section>
     </div>
