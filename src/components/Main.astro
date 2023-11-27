@@ -1,9 +1,10 @@
 ---
 import { Image, getImage } from 'astro:assets';
-import blackFridayImage from '../assets/images/blackFriday.png'
+import primeiroDepositoHero from '../assets/images/primeiro-deposito-dobro.png'
 import Button from '../components/Button.astro';
 import Icon from '../components/Icon.astro';
 import myBgParallax from '../assets/images/casinoGen2.png'
+import telegramImage from '../assets/images/telegram.png';
 
 const optimizedBackground = await getImage({src: myBgParallax, format: 'png'})
 ---
@@ -14,12 +15,12 @@ const optimizedBackground = await getImage({src: myBgParallax, format: 'png'})
         <div class="flex flex-col md:flex-row items-center gap-5 md:gap-10">
           <div class="flex items-center justify-center flex-1">
             <div class="animate-bounce-hero max-w-[250px] md:max-w-[400px]">
-              <Image src={blackFridayImage} alt="" srcset="" width={400}>
+              <Image src={primeiroDepositoHero} alt="" srcset="" width={400}>
             </div>
           </div>
           <div class="flex flex-col items-center md:items-start flex-1 text-center md:text-start gap-10">
             <div class="translate-x-2 translate-y-2 bg-white">
-              <h1 class="text-4xl md:text-5xl m-0 bg-primary text-black p-3 font-bold tracking-normal -translate-x-2 -translate-y-2">
+              <h1 class="text-3xl md:text-5xl m-0 bg-primary text-black p-3 font-bold tracking-normal -translate-x-2 -translate-y-2">
                 DEPOSITE E GANHE O DOBRO EM BÔNUS!
               </h1>
             </div>
@@ -28,7 +29,7 @@ const optimizedBackground = await getImage({src: myBgParallax, format: 'png'})
           </div>
         </div>
       </section>
-      <section>
+      <!-- <section>
         <div class="flex flex-col md:flex-row items-center justify-between gap-10 rounded-2xl p-5 bgImage" style={`background-image: url(${optimizedBackground.src})`}>
           <div class="h-72 w-72 flex items-center justify-center backdrop-blur-2xl rounded-2xl">
             <p class="text-2xl text-primary">IMAGE</p>
@@ -40,7 +41,7 @@ const optimizedBackground = await getImage({src: myBgParallax, format: 'png'})
             <p class="text-2xl text-primary">IMAGE</p>
           </div>
         </div>
-      </section>
+      </section> -->
     </div>
   </div>
   <div class="w-full flex justify-center">
@@ -77,6 +78,14 @@ const optimizedBackground = await getImage({src: myBgParallax, format: 'png'})
       </div>
     </section>
   </div>
+  <section class="container md:hidden">
+    <div class="flex flex-col items-center gap-5 py-10">
+      <a class="animate-pulse" href="https://t.me/melhorjogadabet">
+        <Image src={telegramImage} alt="" width={150} />
+      </a>
+      <p class="text-xl">Conheça o nosso grupo no telegram</p>
+    </div>
+  </section>
   <div class="w-full flex justify-center">
     <section class="container">
       <div class="flex flex-col md:flex-row items-center mt-10 border-2 border-gray-500 rounded-lg p-4 text-gray-500">

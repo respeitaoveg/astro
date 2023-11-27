@@ -11,6 +11,6 @@ export default defineConfig({
   build: {
     assetsPrefix: '.'
   },
-  output: "server",
-  adapter: netlify()
+  // output: "server",
+  // adapter: netlify()
 });

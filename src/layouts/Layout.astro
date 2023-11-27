@@ -1,48 +1,46 @@
 ---
 interface Props {
-	title: string
-  description: string
+  title: string;
+  description: string;
 }
-import { getImage } from 'astro:assets';
+import { getImage } from "astro:assets";
 const { title } = Astro.props;
-import myFavicon from '../assets/images/new_favicon.png'
+import myFavicon from "../assets/images/new_favicon.png";
 
-const optimizedFavicon = await getImage({src: myFavicon, format: 'png'})
+const optimizedFavicon = await getImage({ src: myFavicon, format: "png" });
 ---
 
 <!doctype html>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Jogue com os melhores!" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href={optimizedFavicon.src} />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Jogue com os melhores!" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href={optimizedFavicon.src} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
 
   body {
     @apply flex flex-col bg-dark text-white items-center justify-center;
   }
 
-
   .container {
-   @apply max-w-screen-lg px-4 md:px-0;
+    @apply max-w-screen-lg px-4 md:px-0;
   }
 </style>

@@ -1,14 +1,17 @@
 ---
-import Button from '../components/Button.astro'
 import logo from '../assets/images/new_logo.png';
 import { Image } from 'astro:assets';
+import telegramImage from '../assets/images/telegram.png';
 ---
 
 <header class="w-full max-w-screen-lg px-4">
   <div class="flex flex-row items-center justify-center md:justify-between py-5">
-    <Image src={logo} alt="" width={200} />
-    <div class="hidden md:block">
-      <Button msg='Conhecer' url='window.location = "https://www.melhorjogada.com"' />
+    <Image src={logo} class={'w-[150px] md:w-[200px]'} alt="" />
+    <div class="hidden md:flex md:items-center md:gap-5">
+      <p class="text-lg">Conheça o nosso grupo do telegram</p>
+      <a href="https://t.me/melhorjogadabet">
+        <Image src={telegramImage} alt="" width={100} />
+      </a>
     </div>
   </div>
 </header>
