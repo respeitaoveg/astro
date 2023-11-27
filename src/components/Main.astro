@@ -1,0 +1,123 @@
+---
+import { Image } from 'astro:assets';
+import blackFridayImage from '../assets/images/blackFriday.png'
+import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
+---
+<main class="w-full flex flex-col items-center justify-center gap-16 pb-16">
+  <div class="w-full flex flex-col justify-center items-center bg-gradient-to-t from-black pb-14 md:py-10">
+    <div class="container flex flex-col gap-10">
+      <section>
+        <div class="flex flex-col md:flex-row items-center gap-5 md:gap-10">
+          <div class="flex items-center justify-center flex-1">
+            <div class="animate-bounce-hero max-w-[250px] md:max-w-[300px]">
+              <Image src={blackFridayImage} alt="" srcset="" width={300}>
+            </div>
+          </div>
+          <div class="flex flex-col items-center md:items-start flex-1 text-center md:text-start gap-10">
+            <div class="translate-x-2 translate-y-2 bg-white">
+              <h1 class="text-4xl md:text-5xl m-0 bg-primary text-black p-3 font-bold tracking-normal -translate-x-2 -translate-y-2">
+                BLACK NOVEMBER!
+              </h1>
+            </div>
+            <h2>Corra, ainda dá tempo de participar da black no Melhor Jogada! Até o dia 30/11/2023 seus depósitos <span class="text-primary text-xl">dobram de valor</span> e são convertidos em bônus dentro do site.</h2>
+            <Button msg='Participe agora!' url='window.location = "https://www.melhorjogada.com"' />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="flex flex-col md:flex-row items-center justify-between gap-10 rounded-2xl p-5 bgImage">
+          <div class="h-72 w-72 flex items-center justify-center backdrop-blur-2xl rounded-2xl">
+            <p class="text-2xl text-primary">IMAGE</p>
+          </div>
+          <div class="h-72 w-72 flex items-center justify-center backdrop-blur-2xl rounded-2xl">
+            <p class="text-2xl text-primary">IMAGE</p>
+          </div>
+          <div class="h-72 w-72 flex items-center justify-center backdrop-blur-2xl rounded-2xl">
+            <p class="text-2xl text-primary">IMAGE</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="w-full flex justify-center">
+    <section class="container">
+      <h2 class="text-4xl text-center">Como ganhar seu bônus?</h2>
+      <div class="flex flex-col md:flex-row items-center mt-10">
+        <div class="step-by-step">
+          <div class="counter">1</div>
+          <div>
+            <p class="title">Cadastre-se</p>
+            <p class="subtitle">Faça seu cadastro no portal clicando <span class="text-primary cursor-pointer" onclick="window.location = 'https://www.melhorjogada.com'">aqui</span></p>
+          </div>
+        </div>
+        <div class="next-step text-primary">
+          <Icon icon="double-arrow" />
+        </div>
+        <div class="step-by-step">
+          <div class="counter">2</div>
+          <div>
+            <p class="title">Acesse</p>
+            <p class="subtitle">No lado esquerdo da tela, acesse o link <span class="text-primary">“Indique e Ganhe”</span></p>
+          </div>
+        </div>
+        <div class="next-step text-primary">
+          <Icon icon="double-arrow" />
+        </div>
+        <div class="step-by-step">
+          <div class="counter">3</div>
+          <div>
+            <p class="title">Envie o código</p>
+            <p class="subtitle">Na página <span class="text-primary">“Sistema de Afiliados”</span>, copie o código do convite e envie para o seu amigo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="w-full flex justify-center">
+    <section class="container">
+      <div class="flex flex-col md:flex-row items-center mt-10 border-2 border-gray-500 rounded-lg p-4 text-gray-500">
+        <p class="text-xs">O Melhor Jogada é um site de apostas, desenvolvido em plataforma com total confiabilidade de dados, oferecendo atendimento aos usuários 24h por dia. Prezamos pela melhor experiência do usuário em todas as transações feitas dentro do portal, oferecendo jogos de apostas esportivas de diversas modalidades (pré-jogo em tempo real) e jogos diversos de cassino online. Apoiamos o jogo consciente, positivo e responsável, oferecendo uma experiência segura em apostas de entretenimento e lazer. Não nos responsabilizamos por má-fé utilizando os serviços disponíveis neste portal, estando o usuário ciente das diretrizes e normas de utilização do site (regras disponíveis no primeiro acesso e nos termos de aceite da conta do usuário)</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<style scoped>
+  .step-by-step {
+    @apply w-full flex items-center flex-row gap-5 min-h-[150px];
+  }
+
+  .next-step {
+    @apply w-[20%] flex items-center justify-center animate-bounce-arrow-bottom md:animate-bounce-arrow-right;
+  }
+
+  .step-by-step .counter {
+    @apply w-10 h-10 p-10 flex items-center justify-center rounded-full text-4xl border-2 border-primary text-primary
+  }
+
+  .step-by-step .title {
+    @apply text-2xl
+  }
+
+  .step-by-step .subtitle {
+    @apply text-sm
+  }
+
+  .bgImage {
+    background-image: url(../assets/images/casinoGen2.png);
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1080px 1080px;
+    }
+
+    @media only screen and (max-device-width: 1366px) {
+    .parallax {
+      background-attachment: scroll;
+    }
+}
+
+</style>
