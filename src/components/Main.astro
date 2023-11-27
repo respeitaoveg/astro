@@ -1,8 +1,11 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import blackFridayImage from '../assets/images/blackFriday.png'
 import Button from '../components/Button.astro';
 import Icon from '../components/Icon.astro';
+import myBgParallax from '../assets/images/casinoGen2.png'
+
+const optimizedBackground = await getImage({src: myBgParallax, format: 'png'})
 ---
 <main class="w-full flex flex-col items-center justify-center gap-16 pb-16">
   <div class="w-full flex flex-col justify-center items-center bg-gradient-to-t from-black pb-14 md:py-10">
@@ -26,7 +29,7 @@ import Icon from '../components/Icon.astro';
         </div>
       </section>
       <section>
-        <div class="flex flex-col md:flex-row items-center justify-between gap-10 rounded-2xl p-5 bgImage">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-10 rounded-2xl p-5 bgImage" style={`background-image: url(${optimizedBackground.src})`}>
           <div class="h-72 w-72 flex items-center justify-center backdrop-blur-2xl rounded-2xl">
             <p class="text-2xl text-primary">IMAGE</p>
           </div>
@@ -105,8 +108,6 @@ import Icon from '../components/Icon.astro';
   }
 
   .bgImage {
-    background-image: url(../assets/images/casinoGen2.png);
-
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
