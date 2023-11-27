@@ -3,17 +3,20 @@ interface Props {
 	title: string
   description: string
 }
-
+import { getImage } from 'astro:assets';
 const { title } = Astro.props;
+import myFavicon from '../assets/images/new_favicon.png'
+
+const optimizedFavicon = await getImage({src: myFavicon, format: 'png'})
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Jogue com os melhores!" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<link rel="icon" type="image/png" href={optimizedFavicon.src} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
