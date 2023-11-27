@@ -7,5 +7,8 @@ export default defineConfig({
   server: {
     host: true
   },
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  build: {
+    assetsPrefix: '.'
+  }
 });
