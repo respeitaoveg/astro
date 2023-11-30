@@ -3,7 +3,12 @@ import { Image, getImage } from 'astro:assets';
 import blackFridayImage from '../assets/images/blackFriday.png'
 import Button from '../components/Button.astro';
 import Icon from '../components/Icon.astro';
-import myBgParallax from '../assets/images/casinoGen2.png'
+
+import myBgParallax from '../assets/images/stelar.jpg'
+import fortuneOx from '../assets/images/fortune-ox.jpg'
+import fortuneTiger from '../assets/images/fortune-tiger.jpg'
+import fortuneRabbit from '../assets/images/fortune-rabbit.jpg'
+import fortuneMouse from '../assets/images/fortune-mouse.jpg'
 
 const optimizedBackground = await getImage({src: myBgParallax, format: 'png'})
 ---
@@ -29,15 +34,18 @@ const optimizedBackground = await getImage({src: myBgParallax, format: 'png'})
         </div>
       </section>
       <section>
-        <div class="flex flex-col md:flex-row items-center justify-between gap-10 rounded-2xl p-5 bgImage" style={`background-image: url(${optimizedBackground.src})`}>
-          <div class="h-72 w-72 flex items-center justify-center backdrop-blur-2xl rounded-2xl">
-            <p class="text-2xl text-primary">IMAGE</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 items-center justify-between gap-5 md:gap-10 rounded-2xl p-2 bgImage" style={`background-image: url(${optimizedBackground.src})`}>
+          <div class="parallaxItem">
+            <Image class:list={'w-full rounded-2xl'} src={fortuneOx} alt="" srcset="" />
           </div>
-          <div class="h-72 w-72 flex items-center justify-center backdrop-blur-2xl rounded-2xl">
-            <p class="text-2xl text-primary">IMAGE</p>
+          <div class="parallaxItem">
+            <Image class:list={'w-full rounded-2xl'} src={fortuneTiger} alt="" srcset="" width={200} />
           </div>
-          <div class="h-72 w-72 flex items-center justify-center backdrop-blur-2xl rounded-2xl">
-            <p class="text-2xl text-primary">IMAGE</p>
+          <div class="parallaxItem">
+            <Image class:list={'w-full rounded-2xl'} src={fortuneRabbit} alt="" srcset="" width={200} />
+          </div>
+          <div class="parallaxItem">
+            <Image class:list={'w-full rounded-2xl'} src={fortuneMouse} alt="" srcset="" width={200} />
           </div>
         </div>
       </section>
@@ -113,12 +121,15 @@ const optimizedBackground = await getImage({src: myBgParallax, format: 'png'})
     background-position: center;
     background-repeat: no-repeat;
     background-size: 1080px 1080px;
-    }
+  }
 
-    @media only screen and (max-device-width: 1366px) {
+  .parallaxItem {
+    @apply flex items-center justify-center backdrop-blur-sm rounded-2xl p-4;
+  }
+
+  @media only screen and (max-device-width: 1366px) {
     .parallax {
       background-attachment: scroll;
     }
-}
-
+  }
 </style>
