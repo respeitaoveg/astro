@@ -1,23 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import '../assets/css/default.css'
-import { Image } from 'astro:assets';
-import logo from '../assets/images/new_logo.png';
-
+import Layout from "../layouts/Layout.astro";
+import "../assets/css/default.css";
+import { Image } from "astro:assets";
+import logo from "../assets/images/new_logo.png";
 ---
 
-<Layout title="Bem-vindo ao Melhor Jogada." description='Aqui é pura diversão!'>
-	<div class="redirect-body">
+<Layout title="Bem-vindo! Aguarde..." description="Aqui é pura diversão!">
+  <div class="redirect-body">
     <header>
-      <div>
-        <img
-          src="https://www.melhorjogada.com/new_logo.png"
-          alt=""
-          srcset=""
-          width="150px"
-        />
-        <Image src={logo} alt="" width={200} />
-      </div>
+      <Image src={logo} alt="" width={200} />
     </header>
     <div class="wrapper">
       <div class="circle"></div>
@@ -31,17 +22,24 @@ import logo from '../assets/images/new_logo.png';
 </Layout>
 
 <script>
-  setTimeout(() => {
-    const queryString = window.location.search;
+  const userAgent = navigator.userAgent;
+  const queryString = window.location.search;
+  const params = new URLSearchParams(queryString);
+  const link = params.get("next");
+  const userAgentLC = userAgent.toLowerCase();
+  const isInnerMaxHeight = window.matchMedia('(max-height: 1440px)').matches;
 
-    const params = new URLSearchParams(queryString);
-
-    var link = params.get('next');
-
-    if (link) window.location.href = `https://${link}`
-  }, 3000);
-
-  // loading animation created by Ahmad Emran - https://codepen.io/ahmadbassamemran/
+  if (
+    (!userAgentLC.includes("bot") ||
+      !userAgentLC.includes("facebook") ||
+      !userAgentLC.includes("face")) &&
+    isInnerMaxHeight &&
+    link
+  ) {
+    setTimeout(() => {
+      if (link) window.location.href = `https://www.${link}.com`;
+    }, 3000);
+  }
 </script>
 
 <style>
